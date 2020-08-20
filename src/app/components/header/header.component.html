@@ -1,0 +1,11 @@
+<header>
+    <div class="logo">
+        <img class="img" src="assets/atBrancoSemFundo.webp">
+    </div>
+    <div class="nav-bar">
+        <div class="nav-item" [ngClass]="{'active': currentActive === 1}" (click)="scrollTo('home')">INÍCIO</div>
+        <!-- <div class="nav-item" [ngClass]="{'active': currentActive === 2}" (click)="scrollTo('home')">AGENDA</div> -->
+        <div class="nav-item" [ngClass]="{'active': currentActive === 2}" (click)="scrollTo('video')">MÚSICAS</div>
+        <div class="nav-item" [ngClass]="{'active': currentActive === 3}" (click)="scrollTo('band')">SOBRE NÓS</div>
+    </div>
+</header>

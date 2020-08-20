@@ -1,0 +1,27 @@
+.content{
+    background-image: url('../../../assets/fundo.jpg');
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    padding: 50px 0px;
+}
+
+.photo{
+    opacity: .5;
+    width: 20%;
+    margin: 0px 50px;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.photo:hover{
+    opacity: 1;
+}
+
+
+img{
+    border-radius: 10px;
+    width: 100%;
+}

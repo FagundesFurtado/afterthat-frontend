@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: Tomatoes;
+  src: url("/assets/fontes/TOMATOES.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Gotham;
+  src: url("/assets/fontes/GothamBlackRegular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: GothamUltra;
+  src: url("/assets/fontes/GothamUltra.otf") format("opentype");
+}
+
+@font-face {
+  font-family: GothamThim;
+  src: url("/assets/fontes/GothamThinRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: GothamBook;
+  src: url("/assets/fontes/GothamBook.otf") format("opentype");
+}
+
+
+.content{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
