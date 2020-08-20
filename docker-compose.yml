@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  front-site:
+    image: outcenter/angular:1.1
+    volumes:
+      - ./dist/site-outcenter/:/usr/share/nginx/html
+    labels:
+      traefik.frontend.rule: PathPrefixStrip:/after-that/
+      traefik.frontend.headers.SSLRedirect: "true"
+      traefik.frontend.entryPoints: "http,https"
+    networks:
+      - petech
+    container_name: front-site
+
+networks:
+  petech:
+    external: true
