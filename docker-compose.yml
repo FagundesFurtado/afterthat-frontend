@@ -4,7 +4,7 @@ services:
   front-site:
     image: outcenter/angular:1.1
     volumes:
-      - ./dist/site-outcenter/:/usr/share/nginx/html
+      - ./afterthat/:/usr/share/nginx/html
     labels:
       traefik.frontend.rule: Host:afterthat.com.br, www.afterthat.com.br
       traefik.frontend.headers.SSLRedirect: "true"
