@@ -36,9 +36,10 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
     - name: Start docker
-      uses: garygrossgarten/github-action-ssh@release
+      uses: fifsky/ssh-action@master
       with:
-        command: docker-compose -f ~/${REMOTE_TARGET}/docker-compose.yml up -d --force-recreate --build
+        command: |
+          docker-compose -f ~/${REMOTE_TARGET}/docker-compose.yml up -d --force-recreate --build
         host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        privateKey: ${{ secrets.SERVER_SSH_KEY}}
+        user: root
+        key: ${{ secrets.SERVER_SSH_KEY}}
