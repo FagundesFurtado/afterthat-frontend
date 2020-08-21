@@ -40,7 +40,7 @@ jobs:
       with:
         command: |
           cd ${REMOTE_TARGET}
-          docker-compose -f ~/front-afterthat/docker-compose.yml up -d --force-recreate --build
+          docker-compose -f /root/apps/front-afterthat/docker-compose.yml up -d --force-recreate --build
         host: ${{ secrets.REMOTE_HOST }}
         user: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SERVER_SSH_KEY}}
