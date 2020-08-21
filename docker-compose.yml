@@ -6,7 +6,7 @@ services:
     volumes:
       - ./dist/site-outcenter/:/usr/share/nginx/html
     labels:
-      traefik.frontend.rule: PathPrefixStrip:/after-that/
+      traefik.frontend.rule: Host:afterthat.com.br, www.afterthat.com.br
       traefik.frontend.headers.SSLRedirect: "true"
       traefik.frontend.entryPoints: "http,https"
     networks:
