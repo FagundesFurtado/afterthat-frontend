@@ -39,7 +39,8 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          docker-compose -f ~/${REMOTE_TARGET}/docker-compose.yml up -d --force-recreate --build
+          cd ${REMOTE_TARGET}
+          docker-compose up -d --force-recreate --build
         host: ${{ secrets.REMOTE_HOST }}
-        user: root
+        user: ${{ secrets.REMOTE_USER }}
         key: ${{ secrets.SERVER_SSH_KEY}}
