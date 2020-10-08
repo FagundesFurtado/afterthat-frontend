@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - name: Install Node.js
@@ -39,7 +37,6 @@ jobs:
       uses: fifsky/ssh-action@master
       with:
         command: |
-          cd ${REMOTE_TARGET}
           docker-compose -f /root/apps/front-afterthat/docker-compose.yml up -d --force-recreate --build
         host: ${{ secrets.REMOTE_HOST }}
         user: ${{ secrets.REMOTE_USER }}

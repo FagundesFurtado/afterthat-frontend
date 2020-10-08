@@ -1,10 +1,4 @@
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  AfterViewInit,
-  HostListener,
-} from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -13,41 +7,47 @@ import {
 })
 export class HeaderComponent implements AfterViewInit {
   public currentActive = 1;
-  public homeOffset: Number = null;
-  public showsOffset: Number = null;
-  public videoOffset: Number = null;
-  public bandOffset: Number = null;
+  public homeOffset: number = null;
+  public showsOffset: number = null;
+  public videoOffset: number = null;
+  public bandOffset: number = null;
+  public newsOffset: number = null;
 
-  scrollTo(id: string) {
-    console.log(id);
-    document.getElementById(id).scrollIntoView();
+  offsetNavbar = 90;
+
+  scrollTo(id: string): void {
+    window.scrollTo({
+      top: document.getElementById(id).offsetTop - this.offsetNavbar,
+    });
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.calcOffset();
   }
 
-  private calcOffset() {
+  private calcOffset(): void {
     this.homeOffset = document.getElementById('home').offsetTop;
     this.videoOffset = document.getElementById('video').offsetTop;
     this.bandOffset = document.getElementById('band').offsetTop;
+    this.newsOffset = document.getElementById('news').offsetTop;
   }
 
   @HostListener('window:scroll', ['$event'])
-  checkOffsetTop() {
+  checkOffsetTop(): void {
     this.calcOffset();
-    if (
-      window.pageYOffset >= this.homeOffset &&
-      window.pageYOffset < this.videoOffset
-    ) {
+    if (this.verifyScroll(this.homeOffset, this.videoOffset)) {
       this.currentActive = 1;
-    } else if (
-      window.pageYOffset >= this.videoOffset &&
-      window.pageYOffset < this.bandOffset
-    ) {
+    } else if (this.verifyScroll(this.videoOffset, this.bandOffset)) {
       this.currentActive = 2;
-    } else if (window.pageYOffset >= this.bandOffset) {
+    } else if (this.verifyScroll(this.bandOffset, this.newsOffset)) {
       this.currentActive = 3;
+    } else if (this.verifyScroll(this.newsOffset, Number.MAX_SAFE_INTEGER)) {
+      this.currentActive = 4;
     }
+  }
+
+  private verifyScroll(before: number, after: number): boolean {
+    const atual = Number(window.pageYOffset) + 90;
+    return before <= atual && atual < after;
   }
 }

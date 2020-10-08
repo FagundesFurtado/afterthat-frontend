@@ -1,10 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
 html,
 body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-image: url("./assets/fundoSobreNos.webp");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 @font-face {
   font-family: Tomatoes;
@@ -31,14 +33,17 @@ body {
   src: url("/assets/fontes/GothamBook.otf") format("opentype");
 }
 
+:root {
+  --height: calc(100vw -90px);
+}
 
-.content{
-  height: 100vh;
+.content {
+  height: calc(100vw -90px);
   width: 100vw;
   overflow: hidden;
 }
 
-.center{
+.center {
   display: flex;
   flex-direction: column;
   justify-content: center;
