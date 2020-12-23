@@ -2,7 +2,8 @@
     <app-header></app-header>
     <app-logo></app-logo>
     <app-videos></app-videos>
-    <app-band></app-band>
+    <app-band [members]="members"></app-band>
+    <app-member *ngFor="let member of members" [member]="member"></app-member>
     <app-photos></app-photos>
-    <!-- <app-newsletter></app-newsletter> -->
+    <app-newsletter></app-newsletter>
 </div>

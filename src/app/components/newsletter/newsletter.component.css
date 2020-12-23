@@ -1,61 +1,88 @@
 .newsletter {
-  width: 50%;
-  display: flex;
-  height: 500px;
-  flex-direction: column;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
+    background-image: url("/assets/fundo.jpg");
+    width: 100vw;
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .group {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 1px 2px 3px grey;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 80vw;
+    max-width: 500px;
+    padding: 20px;
+    margin: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px grey;
 }
 
 .text {
-  text-align: start;
-  font-size: 2em;
-  letter-spacing: 0.2em;
+    text-align: start;
+    font-size: 2em;
 }
 
 label {
-  font-size: 1em;
-  padding-right: 1em;
+    font-size: 1em;
+    padding-right: 1em;
 }
 
 input {
-  height: 25px;
-  padding: 8px;
-  border: 0px;
-  outline: none;
-  border-bottom: 1px;
+    height: 25px;
+    padding: 20px;
+    width: 100%;
+    border: 0px;
+    outline: none;
+    border-bottom: 1px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    /* outline: 1px solid #4fa2e9EE; */
+}
+
+input:focus {
+    outline: 2px solid #4fa2e9;
+    background: rgba(255, 255, 255, 0.404) !important;
+}
+
+input[type="text"], input[type="email"] {
+    background: rgba(0, 0, 0, 0);
+}
+
+.form-inline {
+    width: 100%;
+    padding: 20px 0px;
 }
 
 .form-input {
-  margin: 20px;
-  font-size: 15px;
-  border-bottom: 1px solid rgb(156, 154, 154);
+    width: 100%;
+    font-size: 15px;
+    border-bottom: 1px solid rgb(156, 154, 154);
 }
 
 .btn {
-  cursor: pointer;
-  outline: none;
-  padding: 20px 25px;
-  font-size: 10px;
-  border: 0px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  border-radius: 5px;
-  color: white;
-  background-color: #4fa2e9;
-  box-shadow: 1px 2px 3px solid black;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 20px 25px;
+    font-size: 1em;
+    border: 0px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    color: white;
+    background-color: #4fa2e9;
+    box-shadow: 1px 4px 6px solid black;
 }
 
 .btn:hover {
-  box-shadow: 3px 4px 6px solid black;
+    box-shadow: 3px 4px 6px solid black;
+}
+
+.btn:active{
+    transform: translateY(2px) translateX(1px);
 }

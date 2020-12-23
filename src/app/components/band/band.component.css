@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.member-info{
+  text-transform: uppercase;
+}
+
 .member > img {
   opacity: 0.5;
   transition: all 0.5s;

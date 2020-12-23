@@ -1,0 +1,72 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    flex-wrap: wrap;
+}
+
+.photo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info {
+    flex: 6;
+    color: white;
+}
+
+.box {
+    border: 3px solid white;
+    margin: 10%;
+    margin-top: 0px;
+    padding: 10%;
+}
+
+.names {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 30vh;
+}
+
+.name {
+    font-size: 8em;
+    letter-spacing: 5px;
+    font-family: "GothamUltra";
+}
+
+.lastname {
+    position: relative;
+    top: -.8em;
+    left: .2em;
+    font-size: 8em;
+    font-family: 'Tomatoes';
+    color: #4fa2e9;
+}
+
+.about {
+    font-family: "Gotham";
+    font-size: 1.8em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 1000px) {
+    img {
+        width: 100vw;
+    }
+    .names {
+        margin: 0px;
+    }
+    .name {
+        font-size: 3em;
+    }
+    .lastname {
+        font-size: 3em;
+    }
+}
