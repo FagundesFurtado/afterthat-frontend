@@ -91,3 +91,9 @@
     height: 100vh;
   }
 }
+
+
+svg{
+  padding-top: 5px;
+  width: 25px;
+}
