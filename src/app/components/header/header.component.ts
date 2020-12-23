@@ -1,4 +1,6 @@
 import { Component, AfterViewInit, HostListener } from '@angular/core';
+import { of } from 'rxjs';
+import { ScrollService } from 'src/app/core/services/scroll.service'
 
 @Component({
   selector: 'app-header',
@@ -7,18 +9,13 @@ import { Component, AfterViewInit, HostListener } from '@angular/core';
 })
 export class HeaderComponent implements AfterViewInit {
   public currentActive = 1;
-  public homeOffset: number = null;
-  public showsOffset: number = null;
-  public videoOffset: number = null;
-  public bandOffset: number = null;
-  public newsOffset: number = null;
+  topics = []
+  listOfTopicis = ["home", "video", "band", "news"]
 
-  offsetNavbar = 90;
+  constructor(private scrollService: ScrollService) { }
 
   scrollTo(id: string): void {
-    window.scrollTo({
-      top: document.getElementById(id).offsetTop - this.offsetNavbar,
-    });
+    this.scrollService.moveTo(id)
   }
 
   ngAfterViewInit(): void {
@@ -26,28 +23,31 @@ export class HeaderComponent implements AfterViewInit {
   }
 
   private calcOffset(): void {
-    this.homeOffset = document.getElementById('home').offsetTop;
-    this.videoOffset = document.getElementById('video').offsetTop;
-    this.bandOffset = document.getElementById('band').offsetTop;
-    this.newsOffset = document.getElementById('news').offsetTop;
+    this.topics = [0]
+    this.listOfTopicis.forEach((item) =>{
+      const offset = document.getElementById(item)?.offsetTop
+      if(offset){
+        this.topics.push(offset)
+      }
+    })
+    this.topics.push(Infinity)
   }
 
   @HostListener('window:scroll', ['$event'])
   checkOffsetTop(): void {
     this.calcOffset();
-    if (this.verifyScroll(this.homeOffset, this.videoOffset)) {
-      this.currentActive = 1;
-    } else if (this.verifyScroll(this.videoOffset, this.bandOffset)) {
-      this.currentActive = 2;
-    } else if (this.verifyScroll(this.bandOffset, this.newsOffset)) {
-      this.currentActive = 3;
-    } else if (this.verifyScroll(this.newsOffset, Number.MAX_SAFE_INTEGER)) {
-      this.currentActive = 4;
+    let newTopics = 0;
+    for(let i=0; i< this.topics.length -1; i++){
+      if(this.verifyScroll(this.topics[i], this.topics[i+1])){
+        newTopics = i+1
+        i = this.topics.length
+      }
     }
+    this.currentActive = newTopics
   }
 
   private verifyScroll(before: number, after: number): boolean {
-    const atual = Number(window.pageYOffset) + 90;
-    return before <= atual && atual < after;
+    const actual = Number(window.pageYOffset) + 90;
+    return before <= actual && actual < after;
   }
 }

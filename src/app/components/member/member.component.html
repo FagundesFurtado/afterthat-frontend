@@ -1,1 +1,18 @@
-<p>member works!</p>
+<div class="content" [id]="member.name">
+    <div class="photo">
+        <img [src]="member.photo">
+    </div>
+    <div class="info">
+        <div class="names">
+            <div class="name">{{member.name}}</div>
+            <div class="lastname">{{member.lastName}}</div>
+        </div>
+        <div class="box">
+            <div class="about">
+                <div  *ngFor="let phrase of member.about" class="paragraph">
+                    {{phrase}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

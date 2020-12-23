@@ -1,20 +1,19 @@
-.photos {
+.content{
   background-image: url("/assets/fundo.jpg");
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-self: center;
-  padding: 50px 0px;
-  height: calc(100vw -90px);
+  padding: 90px 0px;
+}
+
+.photos {
+  column-count: 4;
+  column-gap: 1em;
 }
 
 .photo {
-  opacity: 0.5;
-  width: 20%;
-  margin: 0px 50px;
-  transition: all 0.5s;
-  cursor: pointer;
+
+  background-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
 }
 
 .photo:hover {
@@ -24,4 +23,23 @@
 img {
   border-radius: 10px;
   width: 100%;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .photos {
+    column-count: 4;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .photos {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .photos {
+    column-count: 2;
+  }
 }

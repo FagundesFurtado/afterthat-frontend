@@ -8,6 +8,7 @@
 .content.center {
   height: 100vh;
   background-color: #303132;
+  padding-top: 90px;
 }
 
 @keyframes grow {
