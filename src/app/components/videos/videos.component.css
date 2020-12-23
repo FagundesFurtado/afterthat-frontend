@@ -6,10 +6,11 @@ iframe {
 }
 
 .content {
-  background-image: url("https://lh3.googleusercontent.com/F7Lf6VrtztKy8817Llq7Tlv7pLItElFIOGalb0PG8wDZzG7mjXbvBYMKtI4jC10lppEtQYTJ1grY0khHDBvTMnr4UHwi_N5vLCGUVJVwBHLQlleRIozSenFrznBcfIcQtan9c31sV3Z26PtZ-sLmHIcDz7KV0dE6Up43FX54apEFPjQRY35dUe0H7iZgIhlnbfNgvwXrwJAtvntwlQyGL8Lho9qWkhN3sR-V0kGsK3cdvA-jCotLqx5eKi7MRIFi6y_O43D2-TyV3AJ58_dGlDtiurpWKydEMvAyiC0HBB71M7aSZAy06e6_lif6TqVrp6d4p0i1aePFCNesbw4dfyftVyrTYULc72IMTwOK8hqiYO63HDYvBH_p7FHIXN0eDCTQ2F6bLX2SCz8qU7TGGhK9woD5NvcEBx0yG8VybvwT6ZOJcR6w7eYBJefwdJzl9kiCVDb1m2Q77Xscom4g0gKp4Z2AfAvk9jffvtI1_2b3XFnXr4a3qwQjy9oRYhCg563Aw10WBVNzFTc0lFsw3fj8YE46owx_LUUsSQ9JK8GW8zQmOM0mCzcb6LOsMl_FFI1943TXH24oH46bmW3CnVYYctiXb9HrDXMpVlOQJ3zsjtFB62kRZPl80CV2EjA0THF20kAUoVNYDYaHzqNMlEwuo59DqhRKqCXqIuLO5mdgDAl682NibQA5KSWB=w1469-h979-no?authuser=0");
+  
+  background-image: url("../../../assets/backgroundVideo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   height: calc(100vh - 90px);
   display: flex;
   justify-content: center;

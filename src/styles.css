@@ -5,7 +5,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   background-image: url("./assets/fundoSobreNos.webp");
-  /* background-image: url("/assets/fundo.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

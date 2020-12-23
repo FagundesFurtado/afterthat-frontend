@@ -54,6 +54,7 @@
     font-size: 1.8em;
     line-height: 1.5em;
     text-align: justify;
+    color: rgb(199, 195, 195);
 }
 
 @media only screen and (max-width: 1000px) {
@@ -69,4 +70,9 @@
     .lastname {
         font-size: 3em;
     }
+}
+
+
+.paragraph {
+    text-indent: 50px;
 }

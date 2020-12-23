@@ -9,7 +9,9 @@
         </div>
         <div class="box">
             <div class="about">
-                {{member.about}}
+                <div  *ngFor="let phrase of member.about" class="paragraph">
+                    {{phrase}}
+                </div>
             </div>
         </div>
     </div>
