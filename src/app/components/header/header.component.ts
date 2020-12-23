@@ -10,7 +10,7 @@ import { ScrollService } from 'src/app/core/services/scroll.service'
 export class HeaderComponent implements AfterViewInit {
   public currentActive = 1;
   topics = []
-  listOfTopicis = ["home", "video", "band", "news"]
+  listOfTopicis = ["home", "video", "band"]
 
   constructor(private scrollService: ScrollService) { }
 
