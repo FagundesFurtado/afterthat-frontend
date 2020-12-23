@@ -8,6 +8,11 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: Tomatoes;
   src: url("/assets/fontes/TOMATOES.ttf") format("opentype");
