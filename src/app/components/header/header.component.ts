@@ -48,6 +48,7 @@ export class HeaderComponent implements AfterViewInit {
 
   private verifyScroll(before: number, after: number): boolean {
     const actual = Number(window.pageYOffset) + 90;
-    return before <= actual && actual < after;
+    const beforeActual = before -10
+    return beforeActual <= actual && actual < after;
   }
 }
